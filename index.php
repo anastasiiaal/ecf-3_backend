@@ -70,6 +70,9 @@
         $allStudents = $allStudents->fetchAll(PDO::FETCH_ASSOC);            // small query to count number of students...
         
         $allPages = sizeof($allStudents) / 6;                               // ... to understand how many pages to generate
+        if(is_float($allPages)) {                                           // but probably division will not be integer, then round to bigger integer to get all pages
+            $allPages = ceil($allPages);
+        }
 
         if($curPage > $allPages) {
             header("Location: index.php");
@@ -99,9 +102,9 @@
                     <tr>
                         <td><?= $student['nom'] ?></td>
                         <td><?= $student['prenom'] ?></td>
-                        <td><?= $student['m'] ?></td>
-                        <td><?= $student['hg'] ?></td>
-                        <td><?= $student['avg'] ?></td>
+                        <td><?= !is_null($student['m']) ? $student['m'] : '-' ?></td>
+                        <td><?= !is_null($student['hg']) ? $student['hg'] : '-' ?></td>
+                        <td><?= !is_null($student['avg']) ? $student['avg'] : '-' ?></td>
                         <td><a class="backend backend-change" href="templates/student.php?id=<?= $student['id_etudiant'] ?>">Modifier →</a></td>
                     </tr>
                 <?php } ?>
