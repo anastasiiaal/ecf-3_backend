@@ -36,13 +36,16 @@ table.main-table th, table.main-table td {
     border-bottom: 1px solid #998d99;
     padding: 10px;
     text-align: left;
-    width: 20%;
+    width: 15%;
 }
 table.student-table {
-    padding: 10px;
+    padding: 0 10px;
     text-align: left;
 }
 table.student-table td {
+    width: 100px;
+}
+table.student-table td:first-child {
     width: 150px;
 }
 a {
@@ -57,15 +60,22 @@ a.backend {
     border-radius: 3px;
     transition: all .2s ease-in-out;
 }
-a.backend:hover {
-    background-color: #ffffff99;
-    text-decoration: none;
+a.backend-change:hover {
+    background-color: #998d994f;
 }
 a.backend-update {
-    border: 2px solid #5caf32;
+    background-color: #5caf3283;
 }
 a.backend-delete {
-    border: 2px solid #de4949;
+    background-color: #de494983;
+}
+a.backend-update:hover {
+    background-color: #5caf32;
+    text-decoration: none;
+}
+a.backend-delete:hover {
+    background-color: #de4949;
+    text-decoration: none;
 }
 .pagination {
     width: 50%;
@@ -78,5 +88,5 @@ a.backend-delete {
 }
 .page a.active {
     font-weight: bold;
-    background-color: #998d997a;
+    background-color: #998d994f;
 }

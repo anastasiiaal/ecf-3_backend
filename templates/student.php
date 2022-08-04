@@ -11,7 +11,8 @@ if(isset($_GET['id'])) {
     $id = $_GET['id'];
 
     $student = $db->query("
-        SELECT st.prenom, st.nom, ex.id_examen, ex.matiere, ex.note FROM `etudiants` AS st 
+        SELECT st.prenom, st.nom, ex.id_examen, ex.matiere, ex.note 
+        FROM `etudiants` AS st 
         INNER JOIN `examens` AS ex
         ON st.id_etudiant = ex.id_etudiant
         WHERE st.id_etudiant = $id
@@ -23,7 +24,7 @@ if(isset($_GET['id'])) {
         die();
     } else { ?>
         <h1 style="margin-bottom: 40px;">Fiche personnelle de l'étudiant : <?= $student[0]['nom'] . " " . $student[0]['prenom'] ?> </h1>
-
+        
         <h3>Notes pour les examens :</h3>
         <ol>
             <?php foreach($student as $st) { ?>
@@ -39,6 +40,12 @@ if(isset($_GET['id'])) {
                 </li>
             <?php } ?>
         </ol>
+
+        <h3 style="margin-top: 40px">Gestion de l'étudiant :</h3>
+        <div class="btn-wrap" style="margin-top: 40px">
+            <a style="margin-right: 15px" class="backend backend-update" href="update.php?id=<?= $id ?>">Modifier le nom</a>
+            <a class="backend backend-delete" href="delete.php?id=<?= $id ?>">Supprimer étudiant</a>
+        </div>
         </div>
         </body>
 <?php
