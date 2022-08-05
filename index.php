@@ -11,7 +11,7 @@
             (SELECT note FROM examens WHERE matiere = 'Histoire-Geographie' AND id_etudiant = st.`id_etudiant`) as `hg`,
             ((SELECT note FROM examens WHERE matiere = 'Mathématiques' AND id_etudiant = st.`id_etudiant`)+(SELECT note FROM examens WHERE matiere = 'Histoire-Geographie' AND id_etudiant = st.`id_etudiant`))/2 AS `avg`
         FROM `etudiants` as st 
-        INNER JOIN `examens` as ex  
+        LEFT JOIN `examens` as ex  
         ON st.`id_etudiant` = ex.`id_etudiant`";
 
     if(isset($_GET['search'])) {  
