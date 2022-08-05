@@ -102,9 +102,9 @@
                     <tr>
                         <td><?= $student['nom'] ?></td>
                         <td><?= $student['prenom'] ?></td>
-                        <td><?= !is_null($student['m']) ? $student['m'] : '-' ?></td>
-                        <td><?= !is_null($student['hg']) ? $student['hg'] : '-' ?></td>
-                        <td><?= !is_null($student['avg']) ? $student['avg'] : '-' ?></td>
+                        <td><?= !is_null($student['m']) ? round($student['m'], 2) : '-' ?></td>
+                        <td><?= !is_null($student['hg']) ? round($student['hg'], 2) : '-' ?></td>
+                        <td><?= !is_null($student['avg']) ? round($student['avg'], 2) : '-' ?></td>
                         <td><a class="backend backend-change" href="templates/student.php?id=<?= $student['id_etudiant'] ?>">Modifier →</a></td>
                     </tr>
                 <?php } ?>

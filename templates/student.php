@@ -1,6 +1,8 @@
 <body>
     <div class="container">
-        <a href="javascript:history.go(-1)" style="margin-bottom: 40px;">< Retour à la liste</a>
+        <!-- commented this line because after modification/deletion of name/exam, returned back to the page of modification -->
+        <!-- <a href="javascript:history.go(-1)" style="margin-bottom: 40px;">< Page précédente</a> -->
+        <a href="../index.php" style="margin-bottom: 40px;">< Retour à la liste</a>
         
 <?php 
 
@@ -30,7 +32,7 @@ if(isset($_GET['id'])) {
         echo "<h1 style='margin-bottom: 40px;'>Fiche personnelle de l'étudiant : " . $student['nom'] . ' ' . $student['prenom'] . "</h1>";
         
         echo "<h3>Notes pour les examens :</h3>";
-        echo "<h4 style='margin-top: 20px; opacity: 80%'>Pas d'examen passé</h4>"; ?>
+        echo "<h4 style='margin-top: 20px; opacity: 80%'>Pas d'examens passés</h4>"; ?>
         <div class="btn-wrap" style="margin-top: 40px">
             <a style="margin-right: 15px" class="backend backend-update" href="update.php?id=<?= $id ?>">Modifier le nom</a>
             <a class="backend backend-delete" href="delete-student.php?id=<?= $id ?>">Supprimer étudiant</a>
