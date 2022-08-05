@@ -5,6 +5,7 @@
 <?php 
 
 require_once('../db/connect.php');
+$titlePage = "Fiche personnelle";
 require_once('head.php'); 
 
 if(isset($_GET['id'])) {

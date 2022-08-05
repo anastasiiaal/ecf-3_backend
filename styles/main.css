@@ -28,6 +28,7 @@ button[type=submit] {
 }
 table {
     margin: 30px auto 30px 0;
+    width: 100%;
 }
 table.main-table th {
     border-top: 1px solid #998d99;
@@ -41,6 +42,7 @@ table.main-table th, table.main-table td {
 table.student-table {
     padding: 0 10px;
     text-align: left;
+    width: auto;
 }
 table.student-table td {
     width: 100px;
@@ -89,4 +91,34 @@ a.backend-delete:hover {
 .page a.active {
     font-weight: bold;
     background-color: #998d994f;
+}
+/* page update */
+form.update-info {
+    width: 60%;
+    margin: 50px auto;
+}
+div.input-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+div.input-div > label {
+    margin-bottom: 10px;
+}
+form.update-info input {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+}
+input.update-btn {
+    padding: 8px 15px;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+    border: none;
+    background-color: #5caf3283;
+    margin-top: 10px;
+}
+input.update-btn:hover {
+    cursor: pointer;
+    background-color: #5caf32;
 }

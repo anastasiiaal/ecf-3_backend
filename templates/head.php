@@ -6,5 +6,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'styles/main.css' : '../styles/main.css' ?>">
-    <title>Students table</title>
+    <title><?= isset($titlePage) ? $titlePage : 'Students table'; ?></title>
 </head>
