@@ -79,6 +79,14 @@ a.backend-delete:hover {
     background-color: #de4949;
     text-decoration: none;
 }
+.ok {
+    color: #256e00;
+    /* font-weight: bold; */
+}
+.bad {
+    color: #dd2626;
+    /* font-weight: bold; */
+}
 .pagination {
     width: 50%;
     display: flex;

@@ -38,7 +38,7 @@
                 die();                       // message "nothing to show", die function
             }
 
-        } else { ?>
+        } else {                           // else if get search is empty.. ?> 
             <div class="container">
         <?php
             require_once('templates/search.php');
@@ -46,7 +46,7 @@
             <h1>Liste des étudiants</h1>
             <h3 style="margin-top: 15px;">Rien à visualiser</h3> 
         <?php
-        die();                             // else if get search is empty => message "nothing to show", die function
+        die();                             // .. => message "nothing to show", die function
         }
         
     } else {
@@ -104,7 +104,7 @@
                         <td><?= $student['prenom'] ?></td>
                         <td><?= !is_null($student['m']) ? round($student['m'], 2) : '-' ?></td>
                         <td><?= !is_null($student['hg']) ? round($student['hg'], 2) : '-' ?></td>
-                        <td><?= !is_null($student['avg']) ? round($student['avg'], 2) : '-' ?></td>
+                        <td class="<?php if($student['avg'] >= 10) {echo 'ok';} else { echo 'bad'; }  ?>"><?= !is_null($student['avg']) ? round($student['avg'], 2) : '-' ?></td>
                         <td><a class="backend backend-change" href="templates/student.php?id=<?= $student['id_etudiant'] ?>">Modifier →</a></td>
                     </tr>
                 <?php } ?>
