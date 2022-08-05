@@ -20,9 +20,13 @@ body {
 input[name=search] {
     padding: 10px; 
     border: none;
+    margin-right: 1px;
+}
+input[name=search]:focus {
+    outline: 1px solid #998d994f;
 }
 button[type=submit] {
-    padding: 10px; 
+    padding: 10px 13px; 
     border: none; 
     background-color: white;
 }
@@ -31,7 +35,8 @@ table {
     width: 100%;
 }
 table.main-table th {
-    border-top: 1px solid #998d99;
+    /* border-top: 1px solid #998d99; */
+    background-color: #998d9927;
 }
 table.main-table th, table.main-table td {
     border-bottom: 1px solid #998d99;
@@ -63,7 +68,8 @@ a.backend {
     transition: all .2s ease-in-out;
 }
 a.backend-change:hover {
-    background-color: #998d994f;
+    background-color: #998d9927;
+    text-decoration: none;
 }
 a.backend-update {
     background-color: #5caf3283;
@@ -118,7 +124,7 @@ form.update-info input {
     font-size: 16px;
     padding: 10px;
 }
-input.update-btn {
+form.update-info input.update-btn {
     padding: 8px 15px;
     border-radius: 3px;
     transition: all .2s ease-in-out;
@@ -126,7 +132,7 @@ input.update-btn {
     background-color: #5caf3283;
     margin-top: 10px;
 }
-input.update-btn:hover {
+form.update-info input.update-btn:hover {
     cursor: pointer;
     background-color: #5caf32;
 }

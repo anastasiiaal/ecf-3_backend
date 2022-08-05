@@ -100,12 +100,24 @@
             <tbody>
                 <?php foreach($superQuery as $student) { ?>
                     <tr>
-                        <td><?= $student['nom'] ?></td>
-                        <td><?= $student['prenom'] ?></td>
-                        <td><?= !is_null($student['m']) ? round($student['m'], 2) : '-' ?></td>
-                        <td><?= !is_null($student['hg']) ? round($student['hg'], 2) : '-' ?></td>
-                        <td class="<?php if($student['avg'] >= 10) {echo 'ok';} else { echo 'bad'; }  ?>"><?= !is_null($student['avg']) ? round($student['avg'], 2) : '-' ?></td>
-                        <td><a class="backend backend-change" href="templates/student.php?id=<?= $student['id_etudiant'] ?>">Modifier →</a></td>
+                        <td>
+                            <?= $student['nom'] ?>
+                        </td>
+                        <td>
+                            <?= $student['prenom'] ?>
+                        </td>
+                        <td>
+                            <?= !is_null($student['m']) ? round($student['m'], 2) : '-' ?>
+                        </td>
+                        <td>
+                            <?= !is_null($student['hg']) ? round($student['hg'], 2) : '-' ?>
+                        </td>
+                        <td class="<?php if($student['avg'] >= 10) {echo 'ok';} else if(is_null($student['avg'])) { echo ''; } else { echo 'bad'; } ?>">
+                            <?= !is_null($student['avg']) ? round($student['avg'], 2) : '-' ?>
+                        </td>
+                        <td>
+                            <a class="backend backend-change" href="templates/student.php?id=<?= $student['id_etudiant'] ?>">Modifier →</a>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

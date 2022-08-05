@@ -63,7 +63,8 @@
                     <h3 style="margin-bottom: 20px;">de l'étudiant : <?= $queryExam['nom'] ?> <?= $queryExam['prenom'] ?></h3>
                     <div class="input-div">
                         <label for="note">Note pour <?= $queryExam['matiere'] ?></label>
-                        <input type="text" name="note" pattern="[0-9-.]{1,4}" title="Seulement les chiffres (max 20.0)" id="note" value="<?= $queryExam['note'] ?>">
+                       <!-- <input type="text" name="note" pattern="[0-9-.]{1,4}" title="Seulement les chiffres (max 20.0)" id="note" value="<?= $queryExam['note'] ?>"> -->
+                        <input type="number" name="note" min="0" max="20" step="0.5" id="note" value="<?= $queryExam['note'] ?>">
                     </div>
                     <input type="submit" name="submit" value="Sauvegarder" class="update-btn">
                 </form>
